@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Az ECMAScript verzió, amire lefordítjuk a kódot
+    "module": "ESNext", // A modul típus (ESNext modern modulokhoz)
+    "outDir": "./dist", // A lefordított fájlok helye
+    "rootDir": "./src", // A forráskód gyökérkönyvtára
+    "esModuleInterop": true, // Kompatibilitás az ES és CommonJS modulok között
+    "moduleResolution": "node", // A modulok keresésének módja
+    "strict": true, // Szoros típusellenőrzés, ami segít a hibák megelőzésében
+    "declaration": true, // Típusdefiníciók generálása (.d.ts fájlok)
+    "skipLibCheck": true, // A könyvtárak típusainak ellenőrzését átugorjuk a gyorsabb build érdekében
+    "forceConsistentCasingInFileNames": true, // A fájlnevek kis- és nagybetű érzékeny kezelése
+    "isolatedModules": true, // A fájlokat külön modulokként kezeli, szükséges a TS fájlokhoz,
+    "jsx": "react"
+  },
+  "include": [
+    "src/**/*" // Az összes .ts fájl a src mappából
+  ],
+  "exclude": [
+    "node_modules" // A node_modules mappát kizárjuk
+  ]
+}

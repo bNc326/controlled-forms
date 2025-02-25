@@ -1,2 +1,2 @@
-export * from "./components/ControlledNumberFormatBase";
+export * from "./components/index";
 export * from "./models/index";

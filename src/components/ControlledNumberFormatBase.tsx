@@ -4,7 +4,7 @@ import { NumberFormatBase, NumberFormatBaseProps } from "react-number-format";
 import { ControlledInputBase } from "../models/index";
 import React from "react";
 
-interface Props<TValues extends FieldValues, TName extends FieldPath<TValues>>
+export interface Props<TValues extends FieldValues, TName extends FieldPath<TValues>>
   extends ControlledInputBase<
     TValues,
     TName,

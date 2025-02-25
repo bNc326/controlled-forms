@@ -1,2 +1,12 @@
 export { default as ControlledNumberFormatBase } from "./ControlledNumberFormatBase";
 export type { Props as ControlledNumberFormatBaseProps } from "./ControlledNumberFormatBase";
+export { default as ControlledPasswordInput } from "./ControlledPasswordInput";
+export type { Props as ControlledPasswordInputProps } from "./ControlledPasswordInput";
+export { default as ControlledSelect } from "./ControlledSelect";
+export type { Props as ControlledSelectProps } from "./ControlledSelect";
+export { default as ControlledSwitch } from "./ControlledSwitch";
+export type { Props as ControlledSwitchProps } from "./ControlledSwitch";
+export { default as ControlledTextfield } from "./ControlledTextfield";
+export type { Props as ControlledTextfieldProps } from "./ControlledTextfield";
+export { default as ControlledPhoneInput } from "./ControlledPhoneInput";
+export type { Props as ControlledPhoneInputProps } from "./ControlledPhoneInput";

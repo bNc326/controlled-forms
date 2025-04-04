@@ -23,8 +23,6 @@ const ControlledTextfield = <
       control={control}
       render={({ field: { onBlur, ...field }, fieldState }) => {
         const props: TextFieldProps = {
-          ...field,
-          ...fieldProps,
           error: !!fieldState.error,
           helperText: fieldState.error?.message || fieldState.error?.message,
           slotProps: {
@@ -32,6 +30,7 @@ const ControlledTextfield = <
               shrink: !!field.value || isFocused,
             },
           },
+
           onFocus() {
             setIsFocused(true);
           },
@@ -39,6 +38,8 @@ const ControlledTextfield = <
             setIsFocused(false);
             onBlur();
           },
+          ...field,
+          ...fieldProps,
         };
         return <TextField {...props} />;
       }}

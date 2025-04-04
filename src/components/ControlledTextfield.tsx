@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import { Controller, FieldPath, FieldValues } from "react-hook-form";
 import { ControlledInputBase } from "../models/index";
 import { TextFieldProps } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 export interface Props<
   TValues extends FieldValues,
   TName extends FieldPath<TValues>
@@ -21,7 +21,7 @@ const ControlledTextfield = <
     <Controller
       name={name}
       control={control}
-      render={({ field, fieldState }) => {
+      render={({ field: { onBlur, ...field }, fieldState }) => {
         const props: TextFieldProps = {
           ...field,
           ...fieldProps,
@@ -32,8 +32,14 @@ const ControlledTextfield = <
               shrink: !!field.value || isFocused,
             },
           },
+          onFocus() {
+            setIsFocused(true);
+          },
+          onBlur() {
+            setIsFocused(false);
+            onBlur();
+          },
         };
-
         return <TextField {...props} />;
       }}
     />
@@ -41,6 +47,3 @@ const ControlledTextfield = <
 };
 
 export default ControlledTextfield;
-function useState<T>(arg0: boolean): [any, any] {
-  throw new Error("Function not implemented.");
-}

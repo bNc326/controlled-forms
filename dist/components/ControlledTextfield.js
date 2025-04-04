@@ -17,7 +17,7 @@ const ControlledTextfield = ({ name, control, fieldProps, }) => {
     return (React.createElement(Controller, { name: name, control: control, render: (_a) => {
             var _b, _c;
             var _d = _a.field, { onBlur } = _d, field = __rest(_d, ["onBlur"]), { fieldState } = _a;
-            const props = Object.assign(Object.assign(Object.assign({}, field), fieldProps), { error: !!fieldState.error, helperText: ((_b = fieldState.error) === null || _b === void 0 ? void 0 : _b.message) || ((_c = fieldState.error) === null || _c === void 0 ? void 0 : _c.message), slotProps: {
+            const props = Object.assign(Object.assign({ error: !!fieldState.error, helperText: ((_b = fieldState.error) === null || _b === void 0 ? void 0 : _b.message) || ((_c = fieldState.error) === null || _c === void 0 ? void 0 : _c.message), slotProps: {
                     inputLabel: {
                         shrink: !!field.value || isFocused,
                     },
@@ -27,7 +27,7 @@ const ControlledTextfield = ({ name, control, fieldProps, }) => {
                 onBlur() {
                     setIsFocused(false);
                     onBlur();
-                } });
+                } }, field), fieldProps);
             return React.createElement(TextField, Object.assign({}, props));
         } }));
 };

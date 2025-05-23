@@ -26,7 +26,7 @@ const ControlledTextfield = <
           ...field,
           ...fieldProps,
           error: !!fieldState.error,
-          helperText: "asd",
+          helperText: !!fieldState.error && fieldState.error?.message,
           slotProps: {
             ...fieldProps?.slotProps,
             inputLabel: {

@@ -15,11 +15,8 @@ import React, { useState } from "react";
 const ControlledTextfield = ({ name, control, fieldProps, }) => {
     const [isFocused, setIsFocused] = useState(false);
     return (React.createElement(Controller, { name: name, control: control, render: (_a) => {
-            var _b;
-            var _c = _a.field, { onBlur } = _c, field = __rest(_c, ["onBlur"]), { fieldState } = _a;
-            const props = Object.assign(Object.assign(Object.assign({}, field), fieldProps), { error: !!fieldState.error, helperText: !!fieldState.error
-                    ? (_b = fieldState.error) === null || _b === void 0 ? void 0 : _b.message
-                    : (fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.helperText) || "", slotProps: Object.assign(Object.assign({}, fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.slotProps), { inputLabel: {
+            var _b = _a.field, { onBlur } = _b, field = __rest(_b, ["onBlur"]), { fieldState } = _a;
+            const props = Object.assign(Object.assign(Object.assign({}, field), fieldProps), { error: !!fieldState.error, helperText: "asd", slotProps: Object.assign(Object.assign({}, fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.slotProps), { inputLabel: {
                         shrink: !!field.value || isFocused,
                     } }), onFocus() {
                     setIsFocused(true);

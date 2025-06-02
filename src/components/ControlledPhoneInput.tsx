@@ -48,7 +48,11 @@ const ControlledPhoneInput = <
             }
           }}
           error={!!fieldState.error}
-          helperText={fieldState.error?.message}
+          helperText={
+            (!!fieldState.error && fieldState.error.message) ||
+            fieldProps?.helperText ||
+            undefined
+          }
           slotProps={{
             input: {
               startAdornment: (

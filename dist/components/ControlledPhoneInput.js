@@ -15,8 +15,7 @@ import { getCountryCallingCode, parsePhoneNumber, formatPhoneNumberIntl, } from 
 import React from "react";
 const ControlledPhoneInput = ({ name, control, fieldProps, }) => {
     return (React.createElement(Controller, { name: name, control: control, render: (_a) => {
-            var _b;
-            var _c = _a.field, { onChange } = _c, field = __rest(_c, ["onChange"]), { fieldState } = _a;
+            var _b = _a.field, { onChange } = _b, field = __rest(_b, ["onChange"]), { fieldState } = _a;
             return (React.createElement(TextField, Object.assign({}, field, fieldProps, { onChange: (e) => {
                     const val = e.target.value;
                     const phoneNumber = parsePhoneNumber(val, {
@@ -29,7 +28,9 @@ const ControlledPhoneInput = ({ name, control, fieldProps, }) => {
                     else {
                         onChange(formatNumber.replace(`+${phoneNumber === null || phoneNumber === void 0 ? void 0 : phoneNumber.countryCallingCode} `, ""));
                     }
-                }, error: !!fieldState.error, helperText: (_b = fieldState.error) === null || _b === void 0 ? void 0 : _b.message, slotProps: {
+                }, error: !!fieldState.error, helperText: (!!fieldState.error && fieldState.error.message) ||
+                    (fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.helperText) ||
+                    undefined, slotProps: {
                     input: {
                         startAdornment: (React.createElement("span", { className: "mr-[6px] font-semibold" }, `+${getCountryCallingCode("HU")}`)),
                     },

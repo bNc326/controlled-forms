@@ -15,9 +15,10 @@ import { NumberFormatBase } from "react-number-format";
 import React from "react";
 const ControlledNumberFormatBase = ({ control, name, fieldProps, formatOptions, suffix, }) => {
     return (React.createElement(Controller, { name: name, control: control, render: (_a) => {
-            var _b;
-            var _c = _a.field, { onChange } = _c, field = __rest(_c, ["onChange"]), { fieldState } = _a;
-            return (React.createElement(NumberFormatBase, Object.assign({ variant: "outlined" }, field, fieldProps, { error: !!fieldState.error, helperText: ((_b = fieldState.error) === null || _b === void 0 ? void 0 : _b.message) || (fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.helperText), customInput: TextField, value: field.value || "", onValueChange: (val) => {
+            var _b = _a.field, { onChange } = _b, field = __rest(_b, ["onChange"]), { fieldState } = _a;
+            return (React.createElement(NumberFormatBase, Object.assign({ variant: "outlined" }, field, fieldProps, { error: !!fieldState.error, helperText: (!!fieldState.error && fieldState.error.message) ||
+                    (fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.helperText) ||
+                    undefined, customInput: TextField, value: field.value || "", onValueChange: (val) => {
                     var _a;
                     onChange((_a = val.floatValue) !== null && _a !== void 0 ? _a : null);
                 }, InputLabelProps: { shrink: true }, format: (val) => {

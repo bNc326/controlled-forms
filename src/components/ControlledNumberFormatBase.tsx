@@ -4,8 +4,10 @@ import { NumberFormatBase, NumberFormatBaseProps } from "react-number-format";
 import { ControlledInputBase } from "../models/index";
 import React from "react";
 
-export interface Props<TValues extends FieldValues, TName extends FieldPath<TValues>>
-  extends ControlledInputBase<
+export interface Props<
+  TValues extends FieldValues,
+  TName extends FieldPath<TValues>
+> extends ControlledInputBase<
     TValues,
     TName,
     NumberFormatBaseProps<TextFieldProps>
@@ -35,7 +37,11 @@ const ControlledNumberFormatBase = <
             {...field}
             {...fieldProps}
             error={!!fieldState.error}
-            helperText={fieldState.error?.message || fieldProps?.helperText}
+            helperText={
+              (!!fieldState.error && fieldState.error.message) ||
+              fieldProps?.helperText ||
+              undefined
+            }
             customInput={TextField}
             value={field.value || ""}
             onValueChange={(val) => {

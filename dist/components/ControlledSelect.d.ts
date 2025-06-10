@@ -7,7 +7,7 @@ export interface Props<TValues extends FieldValues, TName extends FieldPath<TVal
 }> {
     menuItems: {
         value: any;
-        display: string | number;
+        display: React.ReactNode;
     }[];
 }
 declare const ControlledSelect: <TValues extends FieldValues, TName extends FieldPath<TValues>>({ name, control, fieldProps, menuItems, }: Props<TValues, TName>) => React.JSX.Element;

@@ -10,13 +10,15 @@ import React from "react";
 import { Controller, FieldPath, FieldValues } from "react-hook-form";
 import { ControlledInputBase } from "../models/index";
 
-export interface Props<TValues extends FieldValues, TName extends FieldPath<TValues>>
-  extends ControlledInputBase<
+export interface Props<
+  TValues extends FieldValues,
+  TName extends FieldPath<TValues>
+> extends ControlledInputBase<
     TValues,
     TName,
     SelectProps & { helperText?: React.ReactNode }
   > {
-  menuItems: { value: any; display: string | number }[];
+  menuItems: { value: any; display: React.ReactNode }[];
 }
 
 const ControlledSelect = <
